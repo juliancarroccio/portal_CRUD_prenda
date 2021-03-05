@@ -1,3 +1,5 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+portal_CRUD_prenda/__pycache__/
+prenda/__pycache__/
