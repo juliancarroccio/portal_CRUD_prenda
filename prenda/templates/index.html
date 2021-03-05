@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CRUD Prendas</title>
+</head>
+
+<!-- bootstrap CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<!-- bootstrap CDN -->
+
+
+<!-- css -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Poppins:wght@600&display=swap');
+
+.font{
+	font-family: 'Poppins', sans-serif;
+}
+.font1{
+	font-family: 'Mulish', sans-serif;
+}
+</style>
+
+<!-- css -->
+<body>
+
+
+
+<div class="text-left mt-5 font container">
+	
+<div class="text-center alert alert-info font shadow-lg">CRUD de Prendas Versión WEB</div>
+
+
+<div class="row">
+
+
+<!-- form -->
+
+	<div class="col-sm-5 p-5 ">
+
+<div class="text-center alert alert-info font shadow-sm">Agregar Prenda a Base de Datos</div>
+
+		<form method="POST" class="shadow-sm py-3">{% csrf_token %}
+			
+			{{form.as_p}}<br>
+		
+		<button class="btn btn-info">Agregar</button>
+		</form>
+		
+	</div>
+
+<!-- form -->
+
+
+<!-- showing data -->
+
+	<div class="col-sm-7 p-5">
+		<div class="text-center alert alert-info font shadow-sm">Actualizar/Borrar Prenda</div>
+<table class="table table-sm table-info shadow-lg table-hover">
+	
+<thead>
+	<th>ID</th>
+	<th>Codigo Barra</th>
+	<th>Descripción</th>
+	<th>Familia</th>
+	<th>Precio</th>
+	<th>Stock</th>
+
+</thead>
+
+<!-- loop to fetch the data -->
+
+{% for producto in pro%}
+
+<tr class="font1">
+	
+	<td>{{producto.id_producto}}</td>
+	<td>{{producto.codigo_barra}}</td>
+	<td>{{producto.descripcion}}</td>
+	<td>{{producto.familia}}</td>
+	<td>{{producto.precio}}</td>
+	<td>{{producto.stock}}</td>
+	<td><a href="producto/edit/{{producto.id_producto}}/" class="btn btn-sm text-white" style="background-color: green;">Editar</a></td>
+	<td><a href="/producto/delete/{{producto.id_producto}}/" class="btn btn-danger btn-sm text-white" style="background-color: red;">Borrar</a></td>
+
+</tr>
+
+{%endfor%}
+
+<!-- loop to fetch the data -->
+
+</table>
+
+	</div>
+
+<!-- showing data -->
+	
+</div>
+
+
+</div>
+
+
+
+
+
+</body>
+</html>

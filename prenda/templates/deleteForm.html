@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CRUD Prendas</title>
+</head>
+
+<!-- bootstrap CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<!-- bootstrap CDN -->
+
+
+<!-- css -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Poppins:wght@600&display=swap');
+
+.font{
+	font-family: 'Poppins', sans-serif;
+}
+.font1{
+	font-family: 'Mulish', sans-serif;
+}
+
+</style>
+
+<!-- css -->
+<body>
+
+<div class="text-center mt-5 container">
+	
+<div class="alert alert-danger font shadow">Borrar Prenda</div>
+
+<form method="POST" class="font1 p-5 shadow">{% csrf_token %}
+<p class="font1">Esta seguro que la quiere borrar?</p>
+<button class="btn font btn text-white" style="background-color: red;">Borrar</button>
+
+</form>
+
+</div>
+
+
+
+
+
+</body>
+</html>
